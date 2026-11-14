@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amith Prabha — Portfolio
 
-## Getting Started
+A responsive Next.js portfolio covering backend and distributed systems, automation, and full-stack development. Built with TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Stop the server with Ctrl+C.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+The build includes TypeScript validation. The production server defaults to port 3000. Use `npm start -- --port 3100` for a different port. Development uses `.next-dev`; production builds use `.next`. This keeps production builds from overwriting a running development server’s chunks. Use different ports when running both servers.
 
-To learn more about Next.js, take a look at the following resources:
+## Content and interactions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Edit professional details, experience, skills, projects, and education in `lib/portfolio.ts`.
+- Section components live in `components/`; page composition and shared styles live in `app/`.
+- Experience entries expand using native disclosure controls. Skill categories use accessible filter buttons.
+- Animations respect the visitor's reduced-motion preference. Content remains visible before JavaScript loads.
+- Contact uses email, phone, LinkedIn, and GitHub links. Copy-email needs a secure browser context (HTTPS or localhost), with an explanatory message when copying is unavailable.
+- The resume PDF is deliberately not included or served. No form service, backend credentials, or environment variables are needed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Publish when ready
 
-## Deploy on Vercel
+The site has not been deployed by this update. Commit and push the local changes before deploying from GitHub.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Use a hosting provider that supports Next.js, or a Node.js server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Install the locked dependencies with `npm ci`.
+2. Build with `npm run build`.
+3. Start with `npm start` behind your host's HTTPS setup.
+
+For a managed Next.js host, import this repository, select its Next.js preset, and use the repository root as the project directory. Keep the standard Next.js build output rather than treating this as a plain HTML upload.
+
+See the [Next.js deployment documentation](https://nextjs.org/docs/14/app/building-your-application/deploying) for managed and self-hosted deployment options.
+
+Before publishing, review the displayed phone number, profile links, employment details, and availability. Only add live project or repository links when you have the actual destinations.
