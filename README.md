@@ -29,18 +29,14 @@ The build includes TypeScript validation. The production server defaults to port
 - Contact uses email, phone, LinkedIn, and GitHub links. Copy-email needs a secure browser context (HTTPS or localhost), with an explanatory message when copying is unavailable.
 - The resume PDF is deliberately not included or served. No form service, backend credentials, or environment variables are needed.
 
-## Publish when ready
+## Live website and deployment
 
-The site has not been deployed by this update. Commit and push the local changes before deploying from GitHub.
+- Website: https://portfolio-phi-flame-8ov367eiz8.vercel.app
+- GitHub: https://github.com/AmithPrabha/portfolio
+- Vercel project: https://vercel.com/amithprabha/portfolio
 
-Use a hosting provider that supports Next.js, or a Node.js server:
+The Vercel project is connected to the GitHub repository. Push updates to `main` to trigger a production deployment. Review deployment status and build logs in the Vercel project dashboard.
 
-1. Install the locked dependencies with `npm ci`.
-2. Build with `npm run build`.
-3. Start with `npm start` behind your host's HTTPS setup.
+Before pushing an update, run `npm run build` locally. Vercel installs the dependencies and runs the production build using its Next.js preset. No environment variables are required for this portfolio.
 
-For a managed Next.js host, import this repository, select its Next.js preset, and use the repository root as the project directory. Keep the standard Next.js build output rather than treating this as a plain HTML upload.
-
-See the [Next.js deployment documentation](https://nextjs.org/docs/14/app/building-your-application/deploying) for managed and self-hosted deployment options.
-
-Before publishing, review the displayed phone number, profile links, employment details, and availability. Only add live project or repository links when you have the actual destinations.
+The local `.vercel/` linking directory is ignored by Git. The resume PDF is not published.
