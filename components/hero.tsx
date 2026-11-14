@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { FiArrowDown, FiArrowUpRight, FiMapPin } from "react-icons/fi";
 import InteractivePortrait from "./InteractivePortrait";
-import FloatingSymbols from "./FloatingSymbols";
+import gear from "@/assets/icon1.png";
+import lightning from "@/assets/icon2.png";
 import { profile } from "@/lib/portfolio";
 import Reveal from "./Reveal";
 
@@ -24,7 +26,8 @@ export default function Hero() {
         <Reveal className="portrait-stage" delay={0.12}>
           <div className="portrait-orbit" aria-hidden />
           <InteractivePortrait />
-          <FloatingSymbols />
+          <Image src={gear} alt="" className="hero-decoration decoration-cursor" sizes="88px" />
+          <Image src={lightning} alt="" className="hero-decoration decoration-lightning" sizes="76px" />
           <div className="portrait-label"><span className="code-symbol" aria-hidden>&lt;/&gt;</span><div>Built for reliability<span>.NET · Python · Node.js</span></div></div>
           <span className="portrait-caption">ENGINEERING WITH INTENT</span>
         </Reveal>

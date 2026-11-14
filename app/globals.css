@@ -50,17 +50,9 @@ h1 > span { color: var(--orange); }
 .portrait-frame { aspect-ratio: 0.92; position: relative; overflow: hidden; border-radius: 220px 220px 24px 24px; background: linear-gradient(145deg, #3a274d, #ad78603d); border: 1px solid #ffffff24; }
 .portrait { height: 100%; width: 100%; object-fit: contain; object-position: bottom; }
 .portrait-orbit { position: absolute; inset: 8px 0; border: 1px solid #b58fca25; border-radius: 240px 240px 36px 36px; transform: rotate(5deg); }
-/* Orange decorative cutouts float independently without visible captions. */
-.hero-symbol { position: absolute; width: 110px; height: auto; aspect-ratio: 1; object-fit: contain; pointer-events: none; filter: drop-shadow(0 8px 12px #0004); animation: float 7s ease-in-out infinite; z-index: 2; }
-.symbol-gear { filter: sepia(1) saturate(3) hue-rotate(-20deg) drop-shadow(0 8px 12px #0004); width: 88px; left: -36px; top: 25%; }
-.symbol-python { left: 4%; top: -8px; animation-delay: -1.2s; }
-.symbol-postman { right: -30px; top: 7%; animation-delay: -3s; }
-.symbol-dotnet { left: -40px; top: 55%; animation-delay: -4.4s; }
-.symbol-ai { right: -35px; top: 48%; animation-delay: -2.2s; }
-.symbol-php { left: calc(50% - 55px); top: -48px; animation-delay: -5.5s; }
-@media (max-width: 1000px) { .hero-symbol { width: 90px; } .symbol-php { left: calc(50% - 45px); top: -38px; } .symbol-gear, .symbol-dotnet { left: -25px; } .symbol-postman, .symbol-ai { right: -22px; } }
-@media (max-width: 760px) { .hero-symbol { width: 82px; } .symbol-python { left: 0; top: -5px; } .symbol-php { left: calc(50% - 41px); top: -38px; } }
-@media (max-width: 380px) { .hero-symbol { width: 72px; } .symbol-php { left: calc(50% - 36px); } }
+.hero-decoration { position: absolute; width: 76px; height: auto; pointer-events: none; filter: drop-shadow(0 10px 18px #0006); animation: float 7s ease-in-out infinite; }
+.decoration-cursor { top: 20%; left: -22px; width: 88px; }
+.decoration-lightning { top: 3%; right: 10px; animation-delay: -3s; }
 .portrait-label { position: absolute; bottom: 68px; right: -15px; background: #201929ed; backdrop-filter: blur(12px); border: 1px solid #ffffff24; padding: 16px 20px; display: flex; align-items: center; gap: 13px; border-radius: 10px; box-shadow: 0 15px 40px #0004; font-size: 13px; }
 .portrait-label div > span { display: block; font-size: 10px; color: var(--muted); margin-top: 5px; }
 .code-symbol { color: var(--orange); font-size: 25px; }
