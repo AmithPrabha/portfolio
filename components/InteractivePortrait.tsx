@@ -62,7 +62,7 @@ export default function InteractivePortrait() {
       if (active) scheduleBlink(true);
     }
     function move(event: PointerEvent) {
-      if (!active || event.pointerType === "touch") return;
+      if (!active || !event.isPrimary) return;
       pointer = { x: event.clientX, y: event.clientY };
       if (frame) return;
       frame = requestAnimationFrame(() => {
@@ -83,6 +83,9 @@ export default function InteractivePortrait() {
         });
       });
     }
+    function endTouch(event: PointerEvent) {
+      if (event.pointerType === "touch" && event.isPrimary) center();
+    }
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       updateActivity();
@@ -92,6 +95,9 @@ export default function InteractivePortrait() {
     reducedMotion.addEventListener("change", updateActivity);
     document.addEventListener("visibilitychange", updateActivity);
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("pointerdown", move, { passive: true });
+    window.addEventListener("pointerup", endTouch, { passive: true });
+    window.addEventListener("pointercancel", endTouch, { passive: true });
     window.addEventListener("blur", center);
     document.documentElement.addEventListener("pointerleave", center);
     return () => {
@@ -106,6 +112,9 @@ export default function InteractivePortrait() {
       reducedMotion.removeEventListener("change", updateActivity);
       document.removeEventListener("visibilitychange", updateActivity);
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerdown", move);
+      window.removeEventListener("pointerup", endTouch);
+      window.removeEventListener("pointercancel", endTouch);
       window.removeEventListener("blur", center);
       document.documentElement.removeEventListener("pointerleave", center);
     };
