@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
     company: "Probability Gaming", role: "Software Developer · Backend & Distributed Systems",
     location: "Goa, India", dates: "Aug 2024 — Aug 2026",
     highlights: [
-      "Architected distributed backend microservices for 7+ enterprise production applications using NestJS, .NET Core, PHP, and MySQL, sustaining 99.9% operational uptime.",
+      "Architected distributed backend microservices for 7+ enterprise production applications using Go (Golang), NestJS, .NET Core, PHP, and MySQL, sustaining 99.9% operational uptime.",
       "Built RESTful APIs and asynchronous processing pipelines in C# / ASP.NET Core and NestJS for high-concurrency transactions.",
       "Engineered precision computation engines and real-time state management for transaction-critical platforms.",
       "Reduced API latency by 25% through query optimization, composite indexing, and table partitioning in MySQL and SQL Server, preventing deadlocks during peak loads.",
