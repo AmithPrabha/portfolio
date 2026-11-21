@@ -34,7 +34,7 @@ export default function ContactForm() {
         if (payload.errors) setErrors(payload.errors);
         throw new Error(payload.error || "Couldn’t send your message. Please try again later.");
       }
-      form.reset(); setState("success"); setFeedback("Thanks! Your message has been submitted. I’ll be in touch.");
+      form.reset(); setState("success"); setFeedback("Thanks! Your message has been submitted. Please check your inbox and spam or junk folder for my reply.");
     } catch (error) {
       setState("error"); setFeedback(error instanceof Error ? error.message : "Couldn’t send your message. Please try again later.");
     } finally { sending.current = false; }
