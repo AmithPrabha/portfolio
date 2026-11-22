@@ -54,16 +54,17 @@ export const experiences: Experience[] = [
 export type SkillGroup = { name: string; skills: string[] };
 export const skillGroups: SkillGroup[] = [
   { name: "Backend", skills: ["C#", ".NET / ASP.NET Core", "Entity Framework Core", "Node.js", "NestJS", "Python", "FastAPI", "Flask", "PHP", "Laravel", "Microservices", "REST APIs", "Webhooks"] },
-  { name: "Automation", skills: ["BeautifulSoup", "Selenium", "Scrapy", "Playwright", "Headless Browsers", "ETL Pipelines", "Dynamic Content Crawling"] },
+  { name: "Automation", skills: ["n8n", "Playwright", "Selenium", "Chrome DevTools Protocol (CDP)", "BeautifulSoup", "Scrapy", "Headless Browsers", "ETL Pipelines", "Dynamic Content Crawling"] },
   { name: "Frontend", skills: ["TypeScript", "JavaScript (ES6+)", "React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Pixi.js", "JSON", "Responsive Design", "Web Portal Architecture"] },
   { name: "Databases", skills: ["SQL Server / T-SQL", "MySQL", "PostgreSQL", "Redis", "Schema Design", "Complex Joins", "Index Tuning", "ACID Transactions", "Eloquent ORM"] },
   { name: "DevOps", skills: ["Docker", "Docker Compose", "Git", "GitHub Actions", "CI/CD", "Linux", "Postman", "Swagger / OpenAPI", "xUnit", "Jest", "JIRA", "Agile / Scrum", "Salesforce"] },
 ];
 
-export type Project = { title: string; category: string; description: string; stack: string[]; image?: StaticImageData; diagram?: "gateway" | "attendance" };
+export type Project = { title: string; category: string; description: string; stack: string[]; image?: StaticImageData; diagram?: "gateway" | "attendance" | "workflow" };
 export const projects: Project[] = [
   { title: "Enterprise Microservice API Gateway", category: "Backend engineering", description: "A modular ASP.NET Core API gateway with rate limiting, centralized logging, and JWT authentication. Entity Framework Core connects indexed SQL Server repositories, with services deployed through Docker Compose.", stack: ["C# / .NET Core", "Docker", "SQL Server", "Redis"], diagram: "gateway" },
   { title: "AI Automated Attendance System", category: "Automation & computer vision", description: "An automated biometric authentication platform using computer vision models and MySQL schemas to replace manual roll-call processes.", stack: ["Python", "Computer Vision", "REST APIs", "MySQL"], diagram: "attendance" },
+  { title: "Portfolio Enquiry Automation", category: "n8n workflow automation", description: "A published n8n workflow connected to this portfolio's contact form. A webhook receives enquiries, JavaScript prepares the data, and Gemini-powered steps evaluate policy and rewrite content when needed. The workflow then updates Google Sheets, sends a Gmail message, and calls a Slack webhook.", stack: ["n8n", "JavaScript", "Google Gemini", "Google Sheets", "Gmail", "Slack"], diagram: "workflow" },
   { title: "Ecommerce Digital Product", category: "Full-stack development", description: "An ecommerce project built with the MERN stack, combining a React interface with a Node.js and Express backend and MongoDB data storage.", stack: ["MongoDB", "Express", "React", "Node.js"], image: ecommerce },
   { title: "Interactive E-Learning Platform", category: "Web development", description: "An interactive e-learning web project built with Next.js.", stack: ["Next.js"], image: learning },
   { title: "Portfolio Website", category: "Frontend development", description: "A personal portfolio presenting my work, technical skills, and development experience through a React and Tailwind CSS interface.", stack: ["React", "Tailwind CSS"], image: portfolio },
